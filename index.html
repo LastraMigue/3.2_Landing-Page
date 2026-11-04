@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing Page oficial de Nébula, artista digital especializada en paisajes cósmicos, megaestructuras y concept art de ciencia ficción.">
+  <meta name="author" content="Nébula">
+  <meta name="theme-color" content="#0a0b12">
+  <title>Nébula | Arte Digital & Paisajes de Ciencia Ficción</title>
+  
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Enlace accesible de salto para teclado (WCAG 2.1) -->
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container site-header__container">
+      <a href="#inicio" class="site-header__brand" aria-label="Nébula - Página de inicio">
+        <img src="assets/img/vector/logo.svg" 
+             alt="Logotipo vectorial de Nébula Arte Digital por Simon Lee en Unsplash" 
+             width="200" 
+             height="200" 
+             loading="lazy" 
+             class="site-header__logo">
+        <span class="site-header__title">NÉBULA</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a href="#inicio" class="site-nav__link">Inicio</a></li>
+          <li class="site-nav__item"><a href="#galeria" class="site-nav__link">Galería</a></li>
+          <li class="site-nav__item"><a href="#multimedia" class="site-nav__link">Multimedia</a></li>
+          <li class="site-nav__item"><a href="#contacto" class="site-nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN ==================== -->
+  <main id="contenido-principal">
+    
+    <!-- HERO SECTION (IMAGEN DE FONDO 1920x1080 CON CONTENIDO SUPERPUESTO) -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <figure class="hero__figure">
+        <!-- Imagen de fondo semántica cumpliendo relación de aspecto 1920:1080 (16:9) con atributos WPO y WCAG -->
+        <img src="assets/img/raster/hero.webp" 
+             alt="Paisaje panorámico de ciencia ficción con nebulosas carmesí y púrpuras, anillos planetarios y naves interestelares por Mark Basarab" 
+             width="1920" 
+             height="1080" 
+             loading="lazy" 
+             class="hero__bg-img">
+
+        <div class="hero__overlay">
+          <div class="container hero__content">
+            <span class="hero__tag">Concept Art &amp; Ilustración Cósmica</span>
+            <h1 id="hero-title" class="hero__title">Mundos Inexplorados más allá del Horizonte Estelar</h1>
+            <p class="hero__description">
+              Bienvenido al archivo visual de Nébula. Sumérgete en visiones hiperbólicas 
+              de exoplanetas, megaestructuras orbitales y atmósferas alienígenas diseñadas 
+              para proyectos de ciencia ficción de vanguardia.
+            </p>
+          </div>
+        </div>
+
+        <figcaption class="attribution hero__attribution">
+          Fotografía de fondo: <a href="https://unsplash.com/es/@markbasarabvisuals" target="_blank" rel="noopener noreferrer">Mark Basarab</a> en <a href="https://unsplash.com/es" target="_blank" rel="noopener noreferrer">Unsplash</a> &bull; 
+          Licencia: <a href="https://unsplash.com/es/licencia" target="_blank" rel="license noopener noreferrer">Licencia Unsplash</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- GALERÍA DE TRABAJOS -->
+    <section id="galeria" class="gallery section" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__badge">Obras Destacadas</span>
+          <h2 id="gallery-title" class="section__title">Galería de Trabajos</h2>
+          <p class="section__subtitle">
+            Selección de concept art en formato WebP optimizado, explorando arquitectura alienígena, 
+            estaciones orbitales y biomas lejanos.
+          </p>
+        </div>
+
+        <div class="gallery__grid">
+          <!-- Obra 1 (NASA - Unsplash) -->
+          <figure class="gallery__card">
+            <div class="gallery__img-wrapper">
+              <img src="assets/img/raster/thumb1.webp" 
+                   alt="Fotografía astronómica de nebulosa y cúmulo espacial por NASA en Unsplash" 
+                   width="400" 
+                   height="250" 
+                   loading="lazy" 
+                   class="gallery__img">
+            </div>
+            <figcaption class="gallery__caption">
+              <h3 class="gallery__work-title">Neo-Titán: Puesto Avanzado</h3>
+              <p class="gallery__work-desc">
+                Estudio conceptual de estructuras residenciales adaptadas a lluvias de metano y frío criogénico.
+              </p>
+              <div class="attribution">
+                Imagen: <a href="https://unsplash.com/es/@nasa" target="_blank" rel="noopener noreferrer">NASA</a> en <a href="https://unsplash.com/es" target="_blank" rel="noopener noreferrer">Unsplash</a> &bull; 
+                Licencia: <a href="https://unsplash.com/es/licencia" target="_blank" rel="license noopener noreferrer">Licencia Unsplash</a>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Obra 2 (NASA - Unsplash) -->
+          <figure class="gallery__card">
+            <div class="gallery__img-wrapper">
+              <img src="assets/img/raster/thumb2.webp" 
+                   alt="Imagen espacial de galaxias y estrellas lejanas capturadas por NASA en Unsplash" 
+                   width="400" 
+                   height="250" 
+                   loading="lazy" 
+                   class="gallery__img">
+            </div>
+            <figcaption class="gallery__caption">
+              <h3 class="gallery__work-title">Órbita de Orión: Muelle 9</h3>
+              <p class="gallery__work-desc">
+                Render y pintura mate digital de una dársena de repostaje para cruceros de salto hiperespacial.
+              </p>
+              <div class="attribution">
+                Imagen: <a href="https://unsplash.com/es/@nasa" target="_blank" rel="noopener noreferrer">NASA</a> en <a href="https://unsplash.com/es" target="_blank" rel="noopener noreferrer">Unsplash</a> &bull; 
+                Licencia: <a href="https://unsplash.com/es/licencia" target="_blank" rel="license noopener noreferrer">Licencia Unsplash</a>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Obra 3 (NASA - Unsplash) -->
+          <figure class="gallery__card">
+            <div class="gallery__img-wrapper">
+              <img src="assets/img/raster/thumb3.webp" 
+                   alt="Fotografía cósmica de restos de supernova y gas interestelar por NASA en Unsplash" 
+                   width="400" 
+                   height="250" 
+                   loading="lazy" 
+                   class="gallery__img">
+            </div>
+            <figcaption class="gallery__caption">
+              <h3 class="gallery__work-title">Ecos de Próxima b</h3>
+              <p class="gallery__work-desc">
+                Representación especulativa de minerales bioluminiscentes bajo radiación de una enana roja.
+              </p>
+              <div class="attribution">
+                Imagen: <a href="https://unsplash.com/es/@nasa" target="_blank" rel="noopener noreferrer">NASA</a> en <a href="https://unsplash.com/es" target="_blank" rel="noopener noreferrer">Unsplash</a> &bull; 
+                Licencia: <a href="https://unsplash.com/es/licencia" target="_blank" rel="license noopener noreferrer">Licencia Unsplash</a>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN MULTIMEDIA -->
+    <section id="multimedia" class="multimedia section" aria-labelledby="multimedia-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__badge">Inmersión Audiovisual</span>
+          <h2 id="multimedia-title" class="section__title">Sección Multimedia</h2>
+          <p class="section__subtitle">
+            Observa el proceso de ilustración en alta resolución y acompáñalo con la atmósfera sonora ambiental.
+          </p>
+        </div>
+
+        <div class="multimedia__grid">
+          <!-- Reproductor de Vídeo (Luz Calor Som - Pexels) -->
+          <article class="multimedia__item multimedia__item--video">
+            <h3 class="multimedia__item-heading">Proceso Creativo &amp; Speedpaint</h3>
+            <figure class="multimedia__figure">
+              <div class="multimedia__media-wrapper">
+                <video controls 
+                       poster="assets/img/poster.webp" 
+                       preload="metadata" 
+                       class="multimedia__video">
+                  <source src="assets/video/video.mp4" type="video/mp4">
+                  <p>
+                    Tu navegador no soporta el elemento de vídeo HTML5. 
+                    Puedes <a href="assets/video/video.mp4">descargar el vídeo en MP4</a>.
+                  </p>
+                </video>
+              </div>
+              <figcaption class="attribution">
+                Vídeo: <a href="https://www.pexels.com/es-es/@luz-calor-som-99374650/" target="_blank" rel="noopener noreferrer">Luz Calor Som</a> en <a href="https://www.pexels.com/es-es/" target="_blank" rel="noopener noreferrer">Pexels</a> &bull; 
+                Licencia: <a href="https://www.pexels.com/es-ES/license/" target="_blank" rel="license noopener noreferrer">Licencia Pexels</a>
+              </figcaption>
+            </figure>
+          </article>
+
+          <!-- Reproductor de Audio (freesound_community - Pixabay) -->
+          <article class="multimedia__item multimedia__item--audio">
+            <h3 class="multimedia__item-heading">Audio Ambiental: «Hiperespacio»</h3>
+            <figure class="multimedia__figure">
+              <div class="multimedia__audio-card">
+                <div class="multimedia__audio-info">
+                  <span class="multimedia__audio-track">Pista 01 &bull; Frecuencia Cósmica</span>
+                  <p class="multimedia__audio-note">Música ambiental original diseñada para acompañar la contemplación del arte.</p>
+                </div>
+                <div class="multimedia__audio-player-wrapper">
+                  <audio controls preload="none" class="multimedia__audio">
+                    <source src="assets/audio/audio.mp3" type="audio/mpeg">
+                    <p>
+                      Tu navegador no soporta el reproductor de audio HTML5. 
+                      Puedes <a href="assets/audio/audio.mp3">descargar la pista en MP3</a>.
+                    </p>
+                  </audio>
+                </div>
+              </div>
+              <figcaption class="attribution">
+                Audio: <a href="https://pixabay.com/es/users/freesound_community-46691455/" target="_blank" rel="noopener noreferrer">freesound_community</a> en <a href="https://pixabay.com/es/" target="_blank" rel="noopener noreferrer">Pixabay</a> &bull; 
+                Licencia: <a href="https://pixabay.com/es/service/license-summary/" target="_blank" rel="license noopener noreferrer">Licencia Pixabay</a>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO (CTA - Magnific AI) -->
+    <section id="contacto" class="contact section" aria-labelledby="contact-title">
+      <div class="container contact__container">
+        <div class="contact__card">
+          <span class="section__badge">Canal de Transmisión</span>
+          <h2 id="contact-title" class="contact__title">¿Tienes un Proyecto en Mente?</h2>
+          <p class="contact__text">
+            Nébula colabora con estudios de videojuegos, productoras cinematográficas, 
+            editoriales y coleccionistas privados. Si buscas concept art que desafíe 
+            los límites conocidos, establece contacto hoy mismo.
+          </p>
+
+          <!-- Botón de llamada a la acción con animación fotograma a fotograma creada en Magnific -->
+          <div class="contact__cta-block">
+            <a href="mailto:contacto@nebula-art.space?subject=Solicitud%20de%20Proyecto%20-%20N%C3%A9bula" 
+               class="contact__cta-link" 
+               aria-label="Contactar a Nébula por correo electrónico para encargar un proyecto">
+              <img src="assets/img/cta-animation.webp" 
+                   alt="Botón animado interactivo generado con Magnific AI: Pulsa aquí para contactar a Nébula" 
+                   width="300" 
+                   height="111" 
+                   loading="lazy" 
+                   class="contact__cta-img">
+            </a>
+          </div>
+
+          <p class="attribution attribution--cta">
+            Botón animado generado mediante <a href="https://www.magnific.com/es/app" target="_blank" rel="noopener noreferrer">Magnific AI</a>.
+          </p>
+
+          <p class="contact__direct">
+            O escríbenos directamente a: 
+            <a href="mailto:contacto@nebula-art.space" class="contact__email">contacto@nebula-art.space</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__container">
+      <p class="site-footer__brand-title">NÉBULA &bull; ARTISTA DIGITAL</p>
+      <p class="site-footer__brand-desc">
+        Exploración de horizontes de ciencia ficción mediante pintura digital, concept art y diseño ambiental futurista.
+      </p>
+      <p class="site-footer__copy">
+        &copy; 2026 Nébula. Todos los derechos reservados. Logotipo por <a href="https://unsplash.com/es/@simonppt" target="_blank" rel="noopener noreferrer">Simon Lee</a>. Obras visuales y sonoras compartidas bajo licencias libres de Unsplash, Pexels y Pixabay.
+      </p>
+      <p class="site-footer__standards">
+        Maquetación HTML5 semántica &bull; Optimizado para WPO &bull; Cumplimiento WCAG 2.1 AA
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
