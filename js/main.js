@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initVideoModal();
+  initAudioPlayer();
 });
 
 /* 1. Galería de imágenes */
@@ -56,5 +57,44 @@ function initVideoModal() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+}
+
+/* 3. Reproductor de audio con API HTMLMediaElement */
+function initAudioPlayer() {
+  const audio = document.getElementById('ambient-audio');
+  const toggleBtn = document.getElementById('audio-toggle-btn');
+  const toggleText = document.getElementById('audio-btn-text');
+  const toggleIcon = document.getElementById('audio-btn-icon');
+  const muteBtn = document.getElementById('audio-mute-btn');
+  const muteIcon = document.getElementById('audio-mute-icon');
+
+  if (!audio || !toggleBtn) return;
+
+  // Reproducir o pausar
+  toggleBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      toggleIcon.textContent = '⏸';
+      toggleText.textContent = 'Pausar ambiente espacial';
+    } else {
+      audio.pause();
+      toggleIcon.textContent = '▶';
+      toggleText.textContent = 'Escuchar ambiente espacial';
+    }
+  });
+
+  // Silenciar o activar sonido
+  if (muteBtn && muteIcon) {
+    muteBtn.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      muteIcon.textContent = audio.muted ? '🔇' : '🔊';
+    });
+  }
+
+  // Restablecer al finalizar la pista
+  audio.addEventListener('ended', () => {
+    toggleIcon.textContent = '▶';
+    toggleText.textContent = 'Escuchar ambiente espacial';
   });
 }

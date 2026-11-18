@@ -225,13 +225,22 @@
                   <p class="multimedia__audio-note">Música ambiental original diseñada para acompañar la contemplación del arte.</p>
                 </div>
                 <div class="multimedia__audio-player-wrapper">
-                  <audio controls preload="none" class="multimedia__audio">
+                  <!-- Audio con controles nativos ocultos -->
+                  <audio id="ambient-audio" preload="none">
                     <source src="assets/audio/audio.mp3" type="audio/mpeg">
-                    <p>
-                      Tu navegador no soporta el reproductor de audio HTML5. 
-                      Puedes <a href="assets/audio/audio.mp3">descargar la pista en MP3</a>.
-                    </p>
+                    <p>Tu navegador no soporta el reproductor de audio HTML5.</p>
                   </audio>
+
+                  <!-- Botones personalizados gestionados por JS -->
+                  <div class="audio-controls">
+                    <button type="button" id="audio-toggle-btn" class="audio-btn" aria-label="Reproducir o pausar audio de ambiente">
+                      <span id="audio-btn-icon" aria-hidden="true">▶</span>
+                      <span id="audio-btn-text">Escuchar ambiente espacial</span>
+                    </button>
+                    <button type="button" id="audio-mute-btn" class="audio-btn audio-btn--mute" aria-label="Silenciar o activar sonido">
+                      <span id="audio-mute-icon" aria-hidden="true">🔊</span>
+                    </button>
+                  </div>
                 </div>
               </div>
               <figcaption class="attribution">
