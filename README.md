@@ -10,6 +10,7 @@ Diseño y maquetación de una *landing page* para la artista digital ficticia **
 1. [Tabla de Recursos y Licencias](#1-tabla-de-recursos-y-licencias)
 2. [Justificación Técnica de Formatos](#2-justificación-técnica-de-formatos)
 3. [Herramientas Utilizadas](#3-herramientas-utilizadas)
+4. [Propiedad Intelectual y Licencias](#4-propiedad-intelectual-y-licencias)
 
 ---
 
@@ -62,6 +63,22 @@ Software y servicios web empleados en cada proceso de tratamiento y optimizació
   - Recorte del clip de ciencia ficción a una duración exacta de **15 segundos**.
   - Aplicación de curvas suaves de **Fade-in (1,5 s)** al inicio y **Fade-out (2,0 s)** al final para una escucha envolvente sin cortes bruscos.
   - Exportación en MP3 estéreo a **192 kbps** con un peso de **352,71 KB**.
+
+---
+
+## 4. Propiedad Intelectual y Licencias
+
+### Licencia del Proyecto
+El proyecto web y su código se distribuyen bajo la licencia **Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**, permitiendo su distribución y modificación con fines no comerciales, citando la autoría original y compartiendo las obras derivadas bajo los mismos términos.
+
+### Justificación de Compatibilidad de Licencias
+Los recursos utilizados provienen de plataformas con licencias permisivas y gratuitas (Unsplash, Pexels, Pixabay y NASA). Todas ellas autorizan la reproducción y modificación de sus obras sin obligar a licencias privativas ni incompatibles. Al publicar el proyecto bajo **CC BY-NC-SA 4.0**, se cumple con el principio de uso no comercial y se atribuye la autoría correspondiente en la web y en `credits.html`.
+
+### Escenario Hipotético: Recurso con Licencia CC BY-SA
+Si uno de los recursos multimedia utilizados estuviese bajo licencia **CC BY-SA (Atribución-CompartirIgual)**:
+* La cláusula **SA (*ShareAlike*)** tiene efecto *copyleft* o "viral".
+* Cualquier obra derivada que modifique o integre dicho elemento **estaría obligada legalmente a licenciarse exactamente bajo CC BY-SA**.
+* Esto impediría usar licencias más restrictivas (como la cláusula NoComercial "NC" o copyright privativo), forzando a que todo el proyecto se publique de forma libre y compatible con CC BY-SA.
 
 ---
 
