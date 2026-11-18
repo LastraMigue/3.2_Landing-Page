@@ -380,13 +380,37 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   6. GALERÍA DE TRABAJOS (ESTÁTICA, SIN HOVER DE MOVIMIENTO)
+   6. GALERÍA DE TRABAJOS (VISOR DINÁMICO Y MINIATURAS INTERACTIVAS)
    -------------------------------------------------------------------------- */
 .gallery {
   background-color: rgba(18, 20, 34, 0.4);
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Visor principal */
+.gallery__viewer {
+  max-width: 900px;
+  margin: 0 auto var(--space-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: #05060a;
+}
+
+.gallery__viewer-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.gallery__viewer-img--fade {
+  opacity: 0;
+}
+
+/* Cuadrícula de miniaturas */
 .gallery__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -401,6 +425,20 @@ a:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: border-color var(--transition-normal);
+}
+
+.gallery__card--active {
+  border-color: var(--neon-purple-light);
+}
+
+.gallery__thumb-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: block;
 }
 
 .gallery__img-wrapper {
@@ -413,6 +451,14 @@ a:hover {
   height: auto;
   aspect-ratio: 400 / 250;
   object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Feedback visual en las miniaturas (:hover, transform: scale(), transition) */
+.gallery__thumb-btn:hover .gallery__img,
+.gallery__thumb-btn:focus-visible .gallery__img {
+  transform: scale(1.05);
 }
 
 .gallery__caption {

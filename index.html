@@ -10,6 +10,9 @@
   
   <!-- Hoja de estilos externa -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Script principal de interactividad -->
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <!-- ==================== HEADER ==================== -->
@@ -82,17 +85,29 @@
           </p>
         </div>
 
+        <!-- Visor principal de la galería -->
+        <div class="gallery__viewer">
+          <img id="gallery-main-img" 
+               src="assets/img/raster/thumb1.webp" 
+               alt="Neo-Titán: Puesto Avanzado" 
+               class="gallery__viewer-img">
+        </div>
+
         <div class="gallery__grid">
           <!-- Obra 1 (NASA - Unsplash) -->
-          <figure class="gallery__card">
-            <div class="gallery__img-wrapper">
-              <img src="assets/img/raster/thumb1.webp" 
-                   alt="Fotografía astronómica de nebulosa y cúmulo espacial por NASA en Unsplash" 
-                   width="400" 
-                   height="250" 
-                   loading="lazy" 
-                   class="gallery__img">
-            </div>
+          <figure class="gallery__card gallery__card--active" 
+                  data-full="assets/img/raster/thumb1.webp" 
+                  data-alt="Neo-Titán: Puesto Avanzado">
+            <button type="button" class="gallery__thumb-btn" aria-label="Ver Neo-Titán: Puesto Avanzado">
+              <div class="gallery__img-wrapper">
+                <img src="assets/img/raster/thumb1.webp" 
+                     alt="Fotografía astronómica de nebulosa y cúmulo espacial por NASA en Unsplash" 
+                     width="400" 
+                     height="250" 
+                     loading="lazy" 
+                     class="gallery__img">
+              </div>
+            </button>
             <figcaption class="gallery__caption">
               <h3 class="gallery__work-title">Neo-Titán: Puesto Avanzado</h3>
               <p class="gallery__work-desc">
@@ -106,15 +121,19 @@
           </figure>
 
           <!-- Obra 2 (NASA - Unsplash) -->
-          <figure class="gallery__card">
-            <div class="gallery__img-wrapper">
-              <img src="assets/img/raster/thumb2.webp" 
-                   alt="Imagen espacial de galaxias y estrellas lejanas capturadas por NASA en Unsplash" 
-                   width="400" 
-                   height="250" 
-                   loading="lazy" 
-                   class="gallery__img">
-            </div>
+          <figure class="gallery__card" 
+                  data-full="assets/img/raster/thumb2.webp" 
+                  data-alt="Órbita de Orión: Muelle 9">
+            <button type="button" class="gallery__thumb-btn" aria-label="Ver Órbita de Orión: Muelle 9">
+              <div class="gallery__img-wrapper">
+                <img src="assets/img/raster/thumb2.webp" 
+                     alt="Imagen espacial de galaxias y estrellas lejanas capturadas por NASA en Unsplash" 
+                     width="400" 
+                     height="250" 
+                     loading="lazy" 
+                     class="gallery__img">
+              </div>
+            </button>
             <figcaption class="gallery__caption">
               <h3 class="gallery__work-title">Órbita de Orión: Muelle 9</h3>
               <p class="gallery__work-desc">
@@ -128,15 +147,19 @@
           </figure>
 
           <!-- Obra 3 (NASA - Unsplash) -->
-          <figure class="gallery__card">
-            <div class="gallery__img-wrapper">
-              <img src="assets/img/raster/thumb3.webp" 
-                   alt="Fotografía cósmica de restos de supernova y gas interestelar por NASA en Unsplash" 
-                   width="400" 
-                   height="250" 
-                   loading="lazy" 
-                   class="gallery__img">
-            </div>
+          <figure class="gallery__card" 
+                  data-full="assets/img/raster/thumb3.webp" 
+                  data-alt="Ecos de Próxima b">
+            <button type="button" class="gallery__thumb-btn" aria-label="Ver Ecos de Próxima b">
+              <div class="gallery__img-wrapper">
+                <img src="assets/img/raster/thumb3.webp" 
+                     alt="Fotografía cósmica de restos de supernova y gas interestelar por NASA en Unsplash" 
+                     width="400" 
+                     height="250" 
+                     loading="lazy" 
+                     class="gallery__img">
+              </div>
+            </button>
             <figcaption class="gallery__caption">
               <h3 class="gallery__work-title">Ecos de Próxima b</h3>
               <p class="gallery__work-desc">
