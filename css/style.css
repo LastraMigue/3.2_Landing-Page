@@ -538,15 +538,117 @@ a:hover {
   background-color: #05060a;
 }
 
-.multimedia__media-wrapper {
+/* Vista previa del vídeo y botón de impacto */
+.video-preview {
+  position: relative;
+  overflow: hidden;
   background-color: #000000;
 }
 
-.multimedia__video {
+.video-preview__img {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
+  opacity: 0.85;
+}
+
+.video-preview__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--neon-purple);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: var(--glow-purple);
+  min-height: 44px;
+  transition: background-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.video-preview__btn:hover,
+.video-preview__btn:focus-visible {
+  background-color: var(--neon-purple-light);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Ventana modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(5, 6, 10, 0.85);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal__title {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.modal__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__close-btn:hover {
+  color: var(--neon-red);
+}
+
+.modal__video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  background-color: #000000;
 }
 
 .multimedia__audio-card {

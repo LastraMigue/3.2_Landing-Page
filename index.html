@@ -187,21 +187,26 @@
         </div>
 
         <div class="multimedia__grid">
-          <!-- Reproductor de Vídeo (Luz Calor Som - Pexels) -->
+          <!-- Reproductor de Vídeo (Modal interactivo) -->
           <article class="multimedia__item multimedia__item--video">
             <h3 class="multimedia__item-heading">Proceso Creativo &amp; Speedpaint</h3>
             <figure class="multimedia__figure">
-              <div class="multimedia__media-wrapper">
-                <video controls 
-                       poster="assets/img/poster.webp" 
-                       preload="metadata" 
-                       class="multimedia__video">
-                  <source src="assets/video/video.mp4" type="video/mp4">
-                  <p>
-                    Tu navegador no soporta el elemento de vídeo HTML5. 
-                    Puedes <a href="assets/video/video.mp4">descargar el vídeo en MP4</a>.
-                  </p>
-                </video>
+              <div class="video-preview">
+                <img src="assets/img/poster.webp" 
+                     alt="Portada del Reel de Animación" 
+                     width="800" 
+                     height="450" 
+                     class="video-preview__img">
+                <button type="button" 
+                        id="open-video-btn" 
+                        class="video-preview__btn" 
+                        aria-haspopup="dialog" 
+                        aria-controls="video-modal">
+                  <svg class="video-preview__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  Ver Reel de Animación
+                </button>
               </div>
               <figcaption class="attribution">
                 Vídeo: <a href="https://www.pexels.com/es-es/@luz-calor-som-99374650/" target="_blank" rel="noopener noreferrer">Luz Calor Som</a> en <a href="https://www.pexels.com/es-es/" target="_blank" rel="noopener noreferrer">Pexels</a> &bull; 
@@ -276,6 +281,23 @@
         </div>
       </div>
     </section>
+
+    <!-- Modal de Vídeo Programático -->
+    <div id="video-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-video-title" hidden>
+      <div class="modal__overlay" id="modal-overlay"></div>
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3 id="modal-video-title" class="modal__title">Reel de Animación</h3>
+          <button type="button" id="close-video-btn" class="modal__close-btn" aria-label="Cerrar modal">&times;</button>
+        </div>
+        <div class="modal__body">
+          <video id="modal-video" controls preload="metadata" class="modal__video">
+            <source src="assets/video/video.mp4" type="video/mp4">
+            <p>Tu navegador no soporta el vídeo HTML5.</p>
+          </video>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- ==================== FOOTER ==================== -->
