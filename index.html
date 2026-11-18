@@ -19,7 +19,9 @@
   <header class="site-header">
     <div class="container site-header__container">
       <a href="#inicio" class="site-header__brand" aria-label="Nébula - Página de inicio">
-        <!-- Logotipo en SVG inline integrado directamente en el DOM -->
+        <!-- TAREA 1: Logo SVG inline — el código SVG está directamente en el DOM para permitir
+             la manipulación de fill/stroke mediante CSS. Los gradientes definen la esfera nebulosa;
+             las clases logo-svg__glow y logo-svg__rim son los puntos de control para el hover CSS. -->
         <svg class="site-header__logo-svg" viewBox="0 0 100 100" width="44" height="44" role="img" aria-labelledby="logo-title">
           <title id="logo-title">Logotipo de Nébula</title>
           <defs>
@@ -110,6 +112,9 @@
           </p>
         </div>
 
+        <!-- TAREA 2: Galería dinámica — el visor principal (#gallery-main-img) actualiza su src
+             al hacer clic en cada miniatura. Los data-full y data-alt de cada figure contienen
+             la imagen a carga resolución que JavaScript lee en el evento click. -->
         <!-- Visor principal de la galería -->
         <div class="gallery__viewer">
           <img id="gallery-main-img" 
@@ -212,6 +217,8 @@
         </div>
 
         <div class="multimedia__grid">
+          <!-- TAREA 3: Modal de vídeo — el botón #open-video-btn abre el modal #video-modal
+               y llama a video.play() por JS. Cerrar (botón, overlay o Escape) llama a video.pause(). -->
           <!-- Reproductor de Vídeo (Modal interactivo) -->
           <article class="multimedia__item multimedia__item--video">
             <h3 class="multimedia__item-heading">Proceso Creativo &amp; Speedpaint</h3>
@@ -240,6 +247,9 @@
             </figure>
           </article>
 
+          <!-- TAREA 4: Reproductor de audio personalizado — el elemento <audio> no tiene el atributo
+               controls; los botones #audio-toggle-btn y #audio-mute-btn controlan play/pause/muted
+               mediante la API HTMLMediaElement desde JS. -->
           <!-- Reproductor de Audio (freesound_community - Pixabay) -->
           <article class="multimedia__item multimedia__item--audio">
             <h3 class="multimedia__item-heading">Audio Ambiental: «Hiperespacio»</h3>
@@ -316,6 +326,8 @@
       </div>
     </section>
 
+    <!-- TAREA 3 (modal): El modal se coloca fuera del flujo del main para que el overlay
+         cubra toda la pantalla con position: fixed sin interferir con el layout. -->
     <!-- Modal de Vídeo Programático -->
     <div id="video-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-video-title" hidden>
       <div class="modal__overlay" id="modal-overlay"></div>
@@ -334,7 +346,9 @@
     </div>
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
+    <!-- TAREA 5: Propiedad intelectual — el footer declara la licencia CC BY-NC-SA 4.0 del proyecto
+         y enlaza a credits.html donde se atribuyen todos los recursos multimedia externos. -->
+    <!-- ==================== FOOTER ==================== -->
   <footer class="site-footer">
     <div class="container site-footer__container">
       <p class="site-footer__brand-title">NÉBULA &bull; ARTISTA DIGITAL</p>

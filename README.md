@@ -99,6 +99,30 @@ Mediante las herramientas de desarrollo (*Device Mode* / F12 en Chrome y Firefox
 - **Controles táctiles:** Todos los elementos interactivos (miniaturas de galería, botón «Ver Reel de Animación», cierre de modal, botón de audio y silenciador) superan el tamaño mínimo de **44×44 px** exigido por WCAG para garantizar su pulsación táctil sin dificultad.
 - **Responsividad:** El diseño se adapta de forma fluida sin desbordamiento horizontal (*scroll horizontal* nulo) y mantiene la legibilidad tipográfica mediante funciones `clamp()`.
 
+### Evidencias de Comprobación Gráfica
+
+A continuación se documentan las capturas de pantalla obtenidas durante la fase de verificación técnica con DevTools y validación multi-dispositivo:
+
+#### 1. Modo Dispositivo Móvil y Verificación de Controles Táctiles (≥ 44×44 px)
+Simulación en resolución móvil con inspección de elementos interactivos, validando que los botones táctiles cumplen con la recomendación de accesibilidad WCAG:
+
+![Verificación de controles táctiles en dispositivo móvil](img/1.png)
+
+#### 2. Comportamiento Responsive en Tablet y Galería Dinámica
+Validación de la adaptación de maquetación en resolución tablet y funcionamiento interactivo de la galería con actualización fluida de la imagen principal:
+
+![Galería interactiva en resolución tablet](img/2.png)
+
+#### 3. Modal de Vídeo Programático en Ejecución
+Apertura de la ventana modal centrada mediante `open-video-btn`, reproducción automática con `.play()` y capa de superposición (*overlay*):
+
+![Modal de vídeo interactivo en reproducción](img/3.png)
+
+#### 4. Validación Cross-Browser y Consola Limpia
+Prueba de ejecución en navegador alternativo (Firefox / Edge) verificando la ausencia total de errores en la consola de JavaScript:
+
+![Validación en navegador alternativo con consola sin errores](img/4.png)
+
 ---
 
 > **Nota:** La elaboración y refinamiento de la hoja de estilos (`css/style.css`) ha sido apoyada con Inteligencia Artificial para potenciar la coherencia visual y otorgarle un aspecto más inmersivo, futurista y espacial al proyecto.

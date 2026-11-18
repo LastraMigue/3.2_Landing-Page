@@ -209,6 +209,8 @@ a:hover {
   color: var(--text-primary);
 }
 
+/* TAREA 1: SVG inline — estilos base del logo vectorial. filter añade halo de luz.
+   Las clases logo-svg__rim y logo-svg__glow tienen transition para el cambio en hover. */
 /* Logotipo vectorial en SVG inline con control dinámico de propiedades */
 .site-header__logo-svg {
   width: 44px;
@@ -227,6 +229,8 @@ a:hover {
   transition: fill var(--transition-normal);
 }
 
+/* TAREA 1: Comportamiento interactivo mediante pseudoclases :hover y :focus-visible.
+   hue-rotate(90deg) desplaza todo el matiz del SVG de azul/cyan a violeta. */
 /* Comportamiento interactivo mediante pseudoclases :hover y :focus-visible */
 .site-header__brand:hover .site-header__logo-svg,
 .site-header__brand:focus-visible .site-header__logo-svg {
@@ -361,6 +365,7 @@ a:hover {
 
 /* --------------------------------------------------------------------------
    6. GALERÍA DE TRABAJOS (VISOR DINÁMICO Y MINIATURAS INTERACTIVAS)
+   TAREA 2: Visor centralizado y miniaturas con feedback visual (:hover, scale).
    -------------------------------------------------------------------------- */
 .gallery {
   background-color: rgba(18, 20, 34, 0.4);
@@ -518,6 +523,7 @@ a:hover {
   background-color: #05060a;
 }
 
+/* TAREA 3: Vista previa del vídeo y botón de impacto para abrir el modal */
 /* Vista previa del vídeo y botón de impacto */
 .video-preview {
   position: relative;
@@ -561,6 +567,7 @@ a:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
+/* TAREA 3: Estilos de la ventana modal y superposición fija en pantalla */
 /* Ventana modal */
 .modal {
   position: fixed;
@@ -660,6 +667,7 @@ a:hover {
   border: 1px solid var(--color-border);
 }
 
+/* TAREA 4: Controles de audio personalizados y estados interactivos hover/focus */
 /* Controles de audio personalizados */
 .audio-controls {
   display: flex;

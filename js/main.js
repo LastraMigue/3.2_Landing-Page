@@ -1,10 +1,16 @@
+// Inicialización de módulos interactivos al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
-  initGallery();
-  initVideoModal();
-  initAudioPlayer();
+  initGallery();    // Tarea 2: Galería dinámica
+  initVideoModal(); // Tarea 3: Modal de vídeo con API HTMLMediaElement
+  initAudioPlayer(); // Tarea 4: Reproductor de audio personalizado
 });
 
-/* 1. Galería de imágenes */
+/* ==========================================================================
+   TAREA 2: Galería de imágenes interactiva (Vanilla JS)
+   - Escucha clics en las miniaturas
+   - Añade clase de desvanecimiento suave (fade)
+   - Actualiza src y alt en el visor principal (#gallery-main-img)
+   ========================================================================== */
 function initGallery() {
   const viewerImg = document.getElementById('gallery-main-img');
   const cards = document.querySelectorAll('.gallery__card');
@@ -31,7 +37,12 @@ function initGallery() {
   });
 }
 
-/* 2. Modal de vídeo con reproducción automática y pausa al cerrar */
+/* ==========================================================================
+   TAREA 3: Modal de vídeo programático (API HTMLMediaElement)
+   - Controla apertura y cierre del modal
+   - Inicia reproducción automática con .play() al abrir
+   - Pausa reproducción con .pause() al cerrar (botón, overlay o Escape)
+   ========================================================================== */
 function initVideoModal() {
   const openBtn = document.getElementById('open-video-btn');
   const closeBtn = document.getElementById('close-video-btn');
@@ -60,7 +71,12 @@ function initVideoModal() {
   });
 }
 
-/* 3. Reproductor de audio con API HTMLMediaElement */
+/* ==========================================================================
+   TAREA 4: Reproductor de audio personalizado (API HTMLMediaElement)
+   - Controla play() y pause() mediante botón personalizado
+   - Alterna silenciamiento con la propiedad audio.muted
+   - Gestiona eventos para actualizar iconos y textos de estado
+   ========================================================================== */
 function initAudioPlayer() {
   const audio = document.getElementById('ambient-audio');
   const toggleBtn = document.getElementById('audio-toggle-btn');
