@@ -11,6 +11,7 @@ Diseño y maquetación de una *landing page* para la artista digital ficticia **
 2. [Justificación Técnica de Formatos](#2-justificación-técnica-de-formatos)
 3. [Herramientas Utilizadas](#3-herramientas-utilizadas)
 4. [Propiedad Intelectual y Licencias](#4-propiedad-intelectual-y-licencias)
+5. [Verificación Cross-Browser y Multi-Dispositivo](#5-verificación-cross-browser-y-multi-dispositivo)
 
 ---
 
@@ -24,7 +25,7 @@ Listado de cada archivo utilizado en el proyecto, enlace a su URL original de de
 | **Miniatura 1** | `assets/img/raster/thumb1.webp` | [NASA](https://unsplash.com/es/@nasa) | Unsplash | [Ver en Unsplash](https://unsplash.com/es/@nasa) | Dominio Público (NASA) |
 | **Miniatura 2** | `assets/img/raster/thumb2.webp` | [NASA](https://unsplash.com/es/@nasa) | Unsplash | [Ver en Unsplash](https://unsplash.com/es/@nasa) | Dominio Público (NASA) |
 | **Miniatura 3** | `assets/img/raster/thumb3.webp` | [NASA](https://unsplash.com/es/@nasa) | Unsplash | [Ver en Unsplash](https://unsplash.com/es/@nasa) | Dominio Público (NASA) |
-| **Logotipo** | `assets/img/vector/logo.svg` | [Simon Lee](https://unsplash.com/es/@simonppt) | Unsplash | [Ver en Unsplash](https://unsplash.com/es/@simonppt) | Dominio Público / Licencia Unsplash |
+| **Logotipo** | Integrado como SVG inline (`index.html`) | Creación propia (original) | Proyecto Nébula | Código vectorial nativo | Licencia del proyecto (CC BY-NC-SA 4.0) |
 | **Vídeo** | `assets/video/video.mp4` | [Luz Calor Som](https://www.pexels.com/es-es/@luz-calor-som-99374650/) | Pexels | [Ver en Pexels](https://www.pexels.com/es-es/@luz-calor-som-99374650/) | Dominio Público / Licencia Pexels |
 | **Póster Vídeo** | `assets/img/poster.webp` | [Luz Calor Som](https://www.pexels.com/es-es/@luz-calor-som-99374650/) | Pexels | Fotograma extraído del vídeo | Dominio Público / Licencia Pexels |
 | **Audio** | `assets/audio/audio.mp3` | [freesound_community](https://pixabay.com/es/users/freesound_community-46691455/) | Pixabay | [Ver en Pixabay](https://pixabay.com/es/users/freesound_community-46691455/) | Dominio Público / Licencia Pixabay |
@@ -39,7 +40,7 @@ Breve explicación técnica de por qué se eligió cada formato para optimizar e
 | Formato Elegido | Alternativas Descartadas | Justificación Técnica |
 | :--- | :--- | :--- |
 | **`.webp`** *(Hero y Miniaturas)* | `.jpg`, `.png` | WebP implementa compresión predictiva VP8, logrando entre un **25% y un 35% más de compresión** que JPEG a idéntica calidad visual. Esto acelera el tiempo de carga (LCP) y reduce drásticamente el consumo de datos móviles sin pérdida perceptible. |
-| **`.svg`** *(Logotipo)* | `.png`, `.jpg` | Al ser un estándar vectorial en XML basado en curvas matemáticas, **se escala de forma infinita a cualquier resolución o pantalla Retina/HiDPI sin pixelarse**. Su peso es mínimo y permite fondos transparentes sin artefactos. |
+| **`.svg` inline** *(Logotipo)* | `.png`, `.jpg`, `.svg` externo | Al insertarse directamente en el DOM, **ahorra una petición HTTP** y permite manipular sus propiedades vectoriales (`fill`, `stroke`) y estados interactivos (`:hover`, `:focus-visible`) con CSS. Además, escala infinitamente sin pérdida de nitidez en cualquier resolución. |
 | **`.webp animado`** *(Botón CTA)* | `.gif` | El formato GIF tradicional está limitado a una paleta fija de 256 colores y transparencia binaria (genera halos y bordes dentados). WebP animado ofrece **color real de 24 bits y canal alfa de 8 bits**, reduciendo el tamaño en más de un 50% con movimientos fluidos. |
 | **`.mp4` (H.264 / AAC)** *(Vídeo)* | `.avi`, `.mov`, `.webm` | Estándar universal con **soporte nativo al 100% en todos los navegadores** de escritorio y móviles sin plugins. Su códec H.264 brinda una relación compresión-calidad inmejorable para streaming sin cortes bajo el límite fijado de 3 MB. |
 | **`.mp3`** *(Audio)* | `.wav`, `.ogg` | El formato WAV (PCM lineal sin comprimir) superaría los 5 MB para solo 15 segundos. MP3 aplica compresión psicoacústica a 192 kbps, recortando el tamaño a unos **350 KB** preservando una fidelidad excelente para ambientación sonora. |
@@ -53,7 +54,7 @@ Software y servicios web empleados en cada proceso de tratamiento y optimizació
 - **Adobe Photoshop** *(Tratamiento de imágenes y logotipo)*:
   - **Hero Image**: Redimensionada al ancho exacto de **1920 px** (1920×1080 px, 16:9) y exportada en formato WebP optimizado con un peso final de **127,95 KB** (cumple holgadamente el límite de `< 250 KB`).
   - **Miniaturas de Galería**: Recorte y reescalado de las 3 imágenes espaciales de la NASA a tamaño uniforme de **400×250 px**, exportadas a WebP con pesos ligeros de 40 KB, 33 KB y 51 KB.
-  - **Logotipo**: Diseño, ajuste y exportación del logotipo vectorial de Nébula en formato SVG con `viewBox="0 0 200 200"` y fondo transparente para escalabilidad perfecta.
+  - **Logotipo**: Diseñado y creado desde cero como gráfico vectorial mediante **SVG inline** en el DOM (`index.html`) con `viewBox="0 0 48 48"`, empleando primitivas geométricas puras (`ellipse`, `circle`, `polygon`) para posibilitar el control dinámico de propiedades visuales (`fill`, `stroke`) e interactividad (`:hover`, `:focus-visible`) desde CSS.
 - **Adobe Photoshop y Ezgif** *(Animación fotograma a fotograma)*:
   - Creación y edición de los fotogramas secuenciales en Photoshop y ensamblado/optimización del bucle en bucle infinito mediante Ezgif, exportado en **WebP animado** transparente a 300×111 px con un peso ultraoptimizado de **22,97 KB**.
 - **HandBrake** *(Transcodificación de vídeo y extracción de póster)*:
@@ -79,6 +80,24 @@ Si uno de los recursos multimedia utilizados estuviese bajo licencia **CC BY-SA 
 * La cláusula **SA (*ShareAlike*)** tiene efecto *copyleft* o "viral".
 * Cualquier obra derivada que modifique o integre dicho elemento **estaría obligada legalmente a licenciarse exactamente bajo CC BY-SA**.
 * Esto impediría usar licencias más restrictivas (como la cláusula NoComercial "NC" o copyright privativo), forzando a que todo el proyecto se publique de forma libre y compatible con CC BY-SA.
+
+---
+
+## 5. Verificación Cross-Browser y Multi-Dispositivo
+
+### Pruebas en Navegadores (Cross-Browser)
+Se ha verificado la compatibilidad y funcionalidad en los tres motores de renderizado principales:
+
+| Navegador | Motor | SVG Inline & CSS | Galería JS | Modal de Vídeo | Reproductor Audio | Consola |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Google Chrome** | Blink | Correcto | Correcto | Correcto (`.play()/.pause()`) | Correcto (`.play()/.pause()/.muted`) | 0 errores |
+| **Mozilla Firefox** | Gecko | Correcto | Correcto | Correcto (`.play()/.pause()`) | Correcto (`.play()/.pause()/.muted`) | 0 errores |
+| **Microsoft Edge** | Blink | Correcto | Correcto | Correcto (`.play()/.pause()`) | Correcto (`.play()/.pause()/.muted`) | 0 errores |
+
+### Pruebas Multi-Dispositivo y Accesibilidad Táctil (DevTools)
+Mediante las herramientas de desarrollo (*Device Mode* / F12 en Chrome y Firefox) se validaron resoluciones móviles (375×667 px, 390×844 px, 412×915 px) y tablets (768×1024 px):
+- **Controles táctiles:** Todos los elementos interactivos (miniaturas de galería, botón «Ver Reel de Animación», cierre de modal, botón de audio y silenciador) superan el tamaño mínimo de **44×44 px** exigido por WCAG para garantizar su pulsación táctil sin dificultad.
+- **Responsividad:** El diseño se adapta de forma fluida sin desbordamiento horizontal (*scroll horizontal* nulo) y mantiene la legibilidad tipográfica mediante funciones `clamp()`.
 
 ---
 
