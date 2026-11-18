@@ -16,12 +16,13 @@
   <header class="site-header">
     <div class="container site-header__container">
       <a href="#inicio" class="site-header__brand" aria-label="Nébula - Página de inicio">
-        <img src="assets/img/vector/logo.svg" 
-             alt="Logotipo vectorial de Nébula Arte Digital por Simon Lee en Unsplash" 
-             width="200" 
-             height="200" 
-             loading="lazy" 
-             class="site-header__logo">
+        <!-- Logotipo en SVG inline integrado directamente en el DOM -->
+        <svg class="site-header__logo-svg" viewBox="0 0 48 48" width="44" height="44" role="img" aria-labelledby="logo-title">
+          <title id="logo-title">Logotipo de Nébula</title>
+          <ellipse class="logo-svg__orbit" cx="24" cy="24" rx="20" ry="7" transform="rotate(-25 24 24)" />
+          <circle class="logo-svg__planet" cx="24" cy="24" r="11" />
+          <polygon class="logo-svg__star" points="38,6 39.2,10.5 43.5,11.5 39.2,12.5 38,17 36.8,12.5 32.5,11.5 36.8,10.5" />
+        </svg>
         <span class="site-header__title">NÉBULA</span>
       </a>
 

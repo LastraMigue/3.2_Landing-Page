@@ -209,11 +209,58 @@ a:hover {
   color: var(--text-primary);
 }
 
-.site-header__logo {
+/* Logotipo vectorial en SVG inline con control dinámico de propiedades */
+.site-header__logo-svg {
   width: 44px;
   height: 44px;
-  object-fit: contain;
+  display: block;
+  overflow: visible;
   filter: drop-shadow(0 0 6px rgba(157, 78, 221, 0.6));
+  transition: transform var(--transition-normal), filter var(--transition-normal);
+}
+
+.logo-svg__planet {
+  fill: var(--color-bg-elevated);
+  stroke: var(--neon-purple-light);
+  stroke-width: 2;
+  transition: fill var(--transition-normal), stroke var(--transition-normal);
+}
+
+.logo-svg__orbit {
+  fill: none;
+  stroke: var(--neon-purple);
+  stroke-width: 2.2;
+  transition: stroke var(--transition-normal);
+}
+
+.logo-svg__star {
+  fill: var(--neon-red);
+  transform-origin: 38px 11.5px;
+  transition: fill var(--transition-normal), transform var(--transition-normal);
+}
+
+/* Comportamiento interactivo mediante pseudoclases :hover y :focus-visible */
+.site-header__brand:hover .site-header__logo-svg,
+.site-header__brand:focus-visible .site-header__logo-svg {
+  transform: scale(1.1) rotate(6deg);
+  filter: drop-shadow(0 0 10px rgba(255, 42, 95, 0.7));
+}
+
+.site-header__brand:hover .logo-svg__planet,
+.site-header__brand:focus-visible .logo-svg__planet {
+  fill: rgba(255, 42, 95, 0.25);
+  stroke: var(--neon-red);
+}
+
+.site-header__brand:hover .logo-svg__orbit,
+.site-header__brand:focus-visible .logo-svg__orbit {
+  stroke: #ffffff;
+}
+
+.site-header__brand:hover .logo-svg__star,
+.site-header__brand:focus-visible .logo-svg__star {
+  fill: #ffffff;
+  transform: scale(1.3) rotate(45deg);
 }
 
 .site-header__title {
